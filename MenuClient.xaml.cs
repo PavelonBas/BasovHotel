@@ -22,7 +22,9 @@ namespace BasovHotel
     {
         public MenuClient()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            CbHr.ItemsSource = AppData.Context.Rooms.Where(p => p.Busy_room == false).Select(p => p.id_Room).ToList();
+            CbService.ItemsSource = AppData.Context.Services.Select(p => p.Name_Services).ToList();
         }
         
         
