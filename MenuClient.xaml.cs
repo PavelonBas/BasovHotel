@@ -60,7 +60,8 @@ namespace BasovHotel
 
         private void CbService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            price = price + Convert.ToInt32(AppData.Context.Services.Where(p => Convert.ToInt32(CbHr.SelectedItem) == p.id_service).Single().Price_Services);
+            TextBPrice.Text = price.ToString();
         }
     }
 }
