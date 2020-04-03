@@ -26,11 +26,13 @@ namespace BasovHotel
             CbHr.ItemsSource = AppData.Context.Rooms.Where(p => p.Busy_room == false).Select(p => p.id_Room).ToList();
             CbService.ItemsSource = AppData.Context.Services.Select(p => p.Name_Services).ToList();
         }
-        
-        
+        int price;
+
         private void CbHr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            price = Convert.ToInt32(AppData.Context.Rooms.Where(p => Convert.ToInt32(CbHr.SelectedItem) == p.id_Room).FirstOrDefault().Price_room);
+            TextBPrice.Text = price.ToString();
+            TbCategory.Text = AppData.Context.Rooms.Where(p => Convert.ToInt32(CbHr.SelectedItem) == p.id_Room).Single().Category.ToString();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
