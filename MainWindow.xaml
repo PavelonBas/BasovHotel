@@ -1,0 +1,21 @@
+﻿<Window x:Class="BasovHotel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasovHotel"
+        mc:Ignorable="d"
+        MinHeight="500"
+        MinWidth="500"
+        MaxHeight="600"
+        MaxWidth="800"
+        Title="{Binding ElementName=MainFrame, Path=Content.Title}" Height="450" Width="800">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Frame  NavigationUIVisibility="Hidden" Grid.Row="0" Name="MainFrame" ContentRendered="MainFrame_ContentRendered"/>
+        <Button Grid.Row="1" Name="BtnBack" Content="Назад" Width="90" Height="26" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0" FontSize="15" Click="BtnBack_Click"/>
+    </Grid>
+</Window>
